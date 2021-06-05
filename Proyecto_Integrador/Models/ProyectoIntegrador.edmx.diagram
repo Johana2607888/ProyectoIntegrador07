@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6901bd7801124247bdd3f146e34a20bf" Name="Diagram1">
+        <EntityTypeShape EntityType="BD_PROYECTO_INTEGRADORModel.CARGO" Width="1.5" PointX="3.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PROYECTO_INTEGRADORModel.CATEGORIA" Width="1.5" PointX="2.875" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PROYECTO_INTEGRADORModel.CLIENTE" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PROYECTO_INTEGRADORModel.DETALLE" Width="1.5" PointX="7.125" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PROYECTO_INTEGRADORModel.DISTRITO" Width="1.5" PointX="0.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PROYECTO_INTEGRADORModel.EMPLEADO" Width="1.5" PointX="6" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PROYECTO_INTEGRADORModel.MARCA" Width="1.5" PointX="9.125" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PROYECTO_INTEGRADORModel.MASCOTA" Width="1.5" PointX="8.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PROYECTO_INTEGRADORModel.modulo" Width="1.5" PointX="0.625" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PROYECTO_INTEGRADORModel.operaciones" Width="1.5" PointX="5.375" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PROYECTO_INTEGRADORModel.PAIS" Width="1.5" PointX="7.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PROYECTO_INTEGRADORModel.PEDIDO" Width="1.5" PointX="11.25" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PROYECTO_INTEGRADORModel.PRODUCTO" Width="1.5" PointX="5.125" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PROYECTO_INTEGRADORModel.PROVEEDOR" Width="1.5" PointX="11" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PROYECTO_INTEGRADORModel.rol" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PROYECTO_INTEGRADORModel.rol_operacion" Width="1.5" PointX="3.125" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PROYECTO_INTEGRADORModel.SERVICIO" Width="1.5" PointX="8.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PROYECTO_INTEGRADORModel.TIPO_MASCOTA" Width="1.5" PointX="6" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PROYECTO_INTEGRADORModel.TRACKING" Width="1.5" PointX="13.125" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PROYECTO_INTEGRADORModel.usuario" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <AssociationConnector Association="BD_PROYECTO_INTEGRADORModel.FK__EMPLEADO__IDE_CA__74AE54BC" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_PROYECTO_INTEGRADORModel.FK__PRODUCTO__IDE_CA__797309D9" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_PROYECTO_INTEGRADORModel.FK__MASCOTA__IDE_CLI__71D1E811" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_PROYECTO_INTEGRADORModel.FK__PEDIDO__IDE_CLI__07C12930" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_PROYECTO_INTEGRADORModel.FK__SERVICIO__IDE_CL__7E37BEF6" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_PROYECTO_INTEGRADORModel.fk_Distrito_Cli" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_PROYECTO_INTEGRADORModel.fk_id_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_PROYECTO_INTEGRADORModel.FK__DETALLE__IDE_PED__10566F31" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_PROYECTO_INTEGRADORModel.FK__DETALLE__IDE_PRO__114A936A" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_PROYECTO_INTEGRADORModel.FK__EMPLEADO__IDE_DI__75A278F5" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_PROYECTO_INTEGRADORModel.FK__PEDIDO__IDE_DIS__09A971A2" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_PROYECTO_INTEGRADORModel.FK__PROVEEDOR__IDE_D__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_PROYECTO_INTEGRADORModel.FK__EMPLEADO__IDE_US__76969D2E" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_PROYECTO_INTEGRADORModel.FK__PEDIDO__IDE_EMP__08B54D69" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_PROYECTO_INTEGRADORModel.FK__SERVICIO__IDE_EM__7F2BE32F" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_PROYECTO_INTEGRADORModel.FK__PRODUCTO__IDE_MA__7A672E12" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_PROYECTO_INTEGRADORModel.FK__MASCOTA__IDE_TIP__70DDC3D8" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_PROYECTO_INTEGRADORModel.FK_operaciones_modulo" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_PROYECTO_INTEGRADORModel.FK_rol_operacion_operaciones" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_PROYECTO_INTEGRADORModel.FK__PEDIDO__IDE_SER__0A9D95DB" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_PROYECTO_INTEGRADORModel.FK__TRACKING__IDE_PE__0D7A0286" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_PROYECTO_INTEGRADORModel.FK__PRODUCTO__IDE_PR__7B5B524B" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_PROYECTO_INTEGRADORModel.FK_rol_operacion_rol" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_PROYECTO_INTEGRADORModel.FK_usuario_rol" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

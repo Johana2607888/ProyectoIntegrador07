@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Principal";
+    Layout = "~/Views/Shared/_LayoutPrincipal.cshtml";
+}
+
+
+
+<section id="columna" style="border:none">
+    <table>
+        <tr>
+            <td>
+                <img id="logo" src="~/Imagenes/cliente.png" />
+                @Html.ActionLink("CLIENTES", "ListadoCliente", "Cliente")
+            </td>
+            
+        </tr>
+    </table>
+</section>
+<section id="columna" style="border:none">
+    <table>
+        <tr>
+            <td>
+                <img id="logo" src="~/Imagenes/mascotas.png" />
+                @Html.ActionLink("MASCOTAS", "listadoMascotas", "Mascota")
+            </td>
+            
+        </tr>
+    </table>
+</section>
+<section id="columna" style="border:none">
+    <table>
+        <tr>
+            <td>
+                <img id="logo" src="~/Imagenes/servicios.png" />
+                @Html.ActionLink("SERVICIOS", "listadoServicios", "Servicio")
+            </td>
+        </tr>
+    </table>
+</section>
+<section id="columna" style="border:none">
+    <table>
+        <tr>
+            <td>
+                <img id="logo" src="~/Imagenes/producto.png" />
+                @Html.ActionLink("PRODUCTOS", "listadoProductos", "Producto")
+            </td>
+            @*<td>@Html.ActionLink("PRODUCTOS", "listadoProductos", "Producto")</td>*@
+            @*<td>PRODUCTOS</td>*@
+        </tr>
+    </table>
+</section>
+<section id="columna" style="border:none">
+    <table>
+        <tr>
+            <td>
+                <img id="logo" src="~/Imagenes/empleado.png" />
+            </td>
+            <td>EMPLEADOS</td>
+        </tr>
+    </table>
+</section>
+<section id="columna" style="border:none">
+    <table>
+        <tr>
+            <td>
+                <img id="logo" src="~/Imagenes/proveedor.png" />
+                @Html.ActionLink("PROVEEDORES", "listadoProveedores", "Proveedor")
+            </td>
+            @*<td>PROVEEDOR</td>*@
+        </tr>
+    </table>
+</section>

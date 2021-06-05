@@ -1,0 +1,28 @@
+﻿@model Proyecto_Integrador.Model.Cliente
+
+@{Layout = null;}
+@*<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">*@
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title" id="myModalLabel">Registro de Cliente</h4>
+            </div>
+            <div class="modal-body">
+                <div id="modal-content">
+                    Cargando...
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.distrito, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-3">
+                            @Html.DropDownListFor(model => model.distrito, ViewBag.distrito as SelectList,
+                            "Seleccione Distrito", new { @class = "form-control" })
+                        </div>
+                    </div>
+                    @* @Html.Partial("~/Views/Cliente/_RegistraCliente.cshtml")*@
+                </div>
+            </div>
+        </div>
+
+    </div>
+@*</div>*@

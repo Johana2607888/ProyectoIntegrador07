@@ -1,0 +1,448 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BB07F6AB-F0D0-43C7-B7AA-26441D25B1D3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Proyecto_Integrador</RootNamespace>
+    <AssemblyName>Proyecto_Integrador</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccesoController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MascotaController.cs" />
+    <Compile Include="Controllers\PedidoController.cs" />
+    <Compile Include="Controllers\ProductoController.cs" />
+    <Compile Include="Controllers\ProveedorController.cs" />
+    <Compile Include="Controllers\ServicioController.cs" />
+    <Compile Include="Controllers\TiendaController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CARGO.cs">
+      <DependentUpon>ProyectoIntegrador.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CATEGORIA.cs">
+      <DependentUpon>ProyectoIntegrador.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CLIENTE.cs">
+      <DependentUpon>ProyectoIntegrador.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DETALLE.cs">
+      <DependentUpon>ProyectoIntegrador.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DISTRITO.cs">
+      <DependentUpon>ProyectoIntegrador.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EMPLEADO.cs">
+      <DependentUpon>ProyectoIntegrador.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MARCA.cs">
+      <DependentUpon>ProyectoIntegrador.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MASCOTA.cs">
+      <DependentUpon>ProyectoIntegrador.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\modulo.cs">
+      <DependentUpon>ProyectoIntegrador.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\operaciones.cs">
+      <DependentUpon>ProyectoIntegrador.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PAIS.cs">
+      <DependentUpon>ProyectoIntegrador.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PEDIDO.cs">
+      <DependentUpon>ProyectoIntegrador.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PRODUCTO.cs">
+      <DependentUpon>ProyectoIntegrador.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PROVEEDOR.cs">
+      <DependentUpon>ProyectoIntegrador.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProyectoIntegrador.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProyectoIntegrador.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProyectoIntegrador.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProyectoIntegrador.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProyectoIntegrador.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProyectoIntegrador.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\rol.cs">
+      <DependentUpon>ProyectoIntegrador.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\rol_operacion.cs">
+      <DependentUpon>ProyectoIntegrador.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SERVICIO.cs">
+      <DependentUpon>ProyectoIntegrador.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TIPO_MASCOTA.cs">
+      <DependentUpon>ProyectoIntegrador.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TRACKING.cs">
+      <DependentUpon>ProyectoIntegrador.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usuario.cs">
+      <DependentUpon>ProyectoIntegrador.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Categoria.cs" />
+    <Compile Include="Model\Cliente.cs" />
+    <Compile Include="Model\Distrito.cs" />
+    <Compile Include="Model\Item.cs" />
+    <Compile Include="Model\Marca.cs" />
+    <Compile Include="Model\Mascota.cs" />
+    <Compile Include="Model\MascotaO.cs" />
+    <Compile Include="Model\Pedido.cs" />
+    <Compile Include="Model\Producto.cs" />
+    <Compile Include="Model\ProductoO.cs" />
+    <Compile Include="Model\Proveedor.cs" />
+    <Compile Include="Model\ProveedorO.cs" />
+    <Compile Include="Model\Servicios.cs" />
+    <Compile Include="Model\TipoMascota.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\miEstilo.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fotos_empleados\hombre1.jpeg" />
+    <Content Include="fotos_empleados\hombre2.jpg" />
+    <Content Include="fotos_empleados\hombre3.jpg" />
+    <Content Include="fotos_empleados\hombre5.jpg" />
+    <Content Include="fotos_empleados\mujer1.jpg" />
+    <Content Include="fotos_empleados\mujer2.jpg" />
+    <Content Include="fotos_empleados\mujer3.jpg" />
+    <Content Include="fotos_empleados\mujer4.jpg" />
+    <Content Include="fotos_empleados\mujer5.jpg" />
+    <Content Include="fotos_mascotas\bengala1.jpg" />
+    <Content Include="fotos_mascotas\boxer1.jpg" />
+    <Content Include="fotos_mascotas\bullterrier1.jpg" />
+    <Content Include="fotos_mascotas\doberman1.jpg" />
+    <Content Include="fotos_mascotas\gato2.jpg" />
+    <Content Include="fotos_mascotas\labrador1.jpg" />
+    <Content Include="fotos_mascotas\pitbull1.jpeg" />
+    <Content Include="fotos_mascotas\puddle1.jpg" />
+    <Content Include="fotos_mascotas\schnauzer1.jpg" />
+    <Content Include="fotos_mascotas\sharpey1.jpg" />
+    <Content Include="fotos_productos\arnes.jpg" />
+    <Content Include="fotos_productos\avidogsa.jpg" />
+    <Content Include="fotos_productos\banoeco.jpg" />
+    <Content Include="fotos_productos\camabasica.jpg" />
+    <Content Include="fotos_productos\camacolchoneta.jpg" />
+    <Content Include="fotos_productos\casamascota.png" />
+    <Content Include="fotos_productos\cinturonpaseo.jpg" />
+    <Content Include="fotos_productos\collarcorrea.jpg" />
+    <Content Include="fotos_productos\collarin.png" />
+    <Content Include="fotos_productos\cuadroboxer.jpg" />
+    <Content Include="fotos_productos\disfrazdino.jpg" />
+    <Content Include="fotos_productos\disfrazleon.jpg" />
+    <Content Include="fotos_productos\foto1.jpg" />
+    <Content Include="fotos_productos\foto2.jpg" />
+    <Content Include="fotos_productos\foto3.png" />
+    <Content Include="fotos_productos\foto4.jpg" />
+    <Content Include="fotos_productos\foto5.jpg" />
+    <Content Include="fotos_productos\foto6.png" />
+    <Content Include="fotos_productos\foto7.jpg" />
+    <Content Include="fotos_productos\foto8.jpeg" />
+    <Content Include="fotos_productos\foto9.png" />
+    <Content Include="fotos_productos\geldermico.jpg" />
+    <Content Include="fotos_productos\juguetehueso.jpg" />
+    <Content Include="fotos_productos\juguetepato.jpg" />
+    <Content Include="fotos_productos\lanzapelotas.jpg" />
+    <Content Include="fotos_productos\pelotatennis.jpg" />
+    <Content Include="fotos_productos\placaid.jpg" />
+    <Content Include="fotos_productos\poleraperu.jpg" />
+    <Content Include="fotos_productos\ponchotelar.jpeg" />
+    <Content Include="fotos_productos\shampoomedicado.png" />
+    <Content Include="fotos_productos\toallamascota.jpg" />
+    <Content Include="fotos_productos\transportador.jpg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Imagenes\banner.jpg" />
+    <Content Include="Imagenes\cliente.png" />
+    <Content Include="Imagenes\empleado.png" />
+    <Content Include="Imagenes\factura.png" />
+    <Content Include="Imagenes\fondo.jpg" />
+    <Content Include="Imagenes\img-login.png" />
+    <Content Include="Imagenes\mascota.png" />
+    <Content Include="Imagenes\mascotas.jpg" />
+    <Content Include="Imagenes\mascotas.png" />
+    <Content Include="Imagenes\nosotros1.jpg" />
+    <Content Include="Imagenes\nosotros2.jpg" />
+    <Content Include="Imagenes\orden.png" />
+    <Content Include="Imagenes\pago.jpg" />
+    <Content Include="Imagenes\producto.png" />
+    <Content Include="Imagenes\proveedor.png" />
+    <Content Include="Imagenes\servicios.png" />
+    <Content Include="Models\ProyectoIntegrador.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ProyectoIntegrador.Context.cs</LastGenOutput>
+      <DependentUpon>ProyectoIntegrador.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ProyectoIntegrador.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProyectoIntegrador.edmx</DependentUpon>
+      <LastGenOutput>ProyectoIntegrador.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\ProyectoIntegrador.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ProyectoIntegrador.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ProyectoIntegrador.edmx.diagram">
+      <DependentUpon>ProyectoIntegrador.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\Cliente\Cliente.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Productos\ListadoProducto.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Acceso\Login.cshtml" />
+    <Content Include="Views\Shared\_LayoutLogin.cshtml" />
+    <Content Include="Views\Shared\_LayoutPrincipal.cshtml" />
+    <Content Include="Views\Home\Principal.cshtml" />
+    <Content Include="Views\Producto\listadoProductos.cshtml" />
+    <Content Include="Views\Shared\_PartialProducto.cshtml" />
+    <Content Include="Views\Tienda\carritoCompras.cshtml" />
+    <Content Include="Views\Producto\registrarProducto.cshtml" />
+    <Content Include="Views\Producto\_EditarProducto.cshtml" />
+    <Content Include="Views\Producto\modificarProducto.cshtml" />
+    <Content Include="Views\Proveedor\listadoProveedores.cshtml" />
+    <Content Include="Views\Proveedor\registrarProveedor.cshtml" />
+    <Content Include="Views\Proveedor\modificarProveedor.cshtml" />
+    <Content Include="Views\Mascota\listadoMascotas.cshtml" />
+    <Content Include="Views\Shared\_PartialMascota.cshtml" />
+    <Content Include="Views\Mascota\MascotasClientes.cshtml" />
+    <Content Include="Views\Mascota\registrarMascota.cshtml" />
+    <Content Include="Views\Mascota\modificarMascota.cshtml" />
+    <Content Include="Views\Servicio\listadoServicios.cshtml" />
+    <Content Include="Views\Servicio\modificarServicio.cshtml" />
+    <Content Include="Views\Servicio\registrarServicio.cshtml" />
+    <Content Include="Views\Cliente\registrarCliente.cshtml" />
+    <Content Include="Views\Cliente\_RegistraCliente.cshtml" />
+    <Content Include="Views\Cliente\ListadoCliente.cshtml" />
+    <Content Include="Views\Cliente\modificarCliente.cshtml" />
+    <Content Include="Views\Tienda\seleccionaProducto.cshtml" />
+    <Content Include="Views\Shared\_PartialRegistro.cshtml" />
+    <Content Include="Views\Tienda\comprar.cshtml" />
+    <Content Include="Views\Pedido\ListadoPedidos.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Filters\" />
+    <Folder Include="fotos_servicios\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51570</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51570/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

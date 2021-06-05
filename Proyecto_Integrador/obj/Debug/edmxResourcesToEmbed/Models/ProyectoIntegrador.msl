@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BD_PROYECTO_INTEGRADORModelStoreContainer" CdmEntityContainer="BD_PROYECTO_INTEGRADOREntities">
+    <EntitySetMapping Name="CARGO">
+      <EntityTypeMapping TypeName="BD_PROYECTO_INTEGRADORModel.CARGO">
+        <MappingFragment StoreEntitySet="CARGO">
+          <ScalarProperty Name="IDE_CAR" ColumnName="IDE_CAR" />
+          <ScalarProperty Name="DES_CAR" ColumnName="DES_CAR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CATEGORIA">
+      <EntityTypeMapping TypeName="BD_PROYECTO_INTEGRADORModel.CATEGORIA">
+        <MappingFragment StoreEntitySet="CATEGORIA">
+          <ScalarProperty Name="IDE_CAT" ColumnName="IDE_CAT" />
+          <ScalarProperty Name="NOM_CAT" ColumnName="NOM_CAT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLIENTE">
+      <EntityTypeMapping TypeName="BD_PROYECTO_INTEGRADORModel.CLIENTE">
+        <MappingFragment StoreEntitySet="CLIENTE">
+          <ScalarProperty Name="IDE_CLI" ColumnName="IDE_CLI" />
+          <ScalarProperty Name="NOM_CLI" ColumnName="NOM_CLI" />
+          <ScalarProperty Name="APE_CLI" ColumnName="APE_CLI" />
+          <ScalarProperty Name="DNI_CLI" ColumnName="DNI_CLI" />
+          <ScalarProperty Name="DIR_CLI" ColumnName="DIR_CLI" />
+          <ScalarProperty Name="COR_CLI" ColumnName="COR_CLI" />
+          <ScalarProperty Name="FON_CLI" ColumnName="FON_CLI" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="IDE_DIS" ColumnName="IDE_DIS" />
+          <ScalarProperty Name="IDE_USU" ColumnName="IDE_USU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DETALLE">
+      <EntityTypeMapping TypeName="BD_PROYECTO_INTEGRADORModel.DETALLE">
+        <MappingFragment StoreEntitySet="DETALLE">
+          <ScalarProperty Name="IDE_PED" ColumnName="IDE_PED" />
+          <ScalarProperty Name="IDE_PRO" ColumnName="IDE_PRO" />
+          <ScalarProperty Name="PRE_DET" ColumnName="PRE_DET" />
+          <ScalarProperty Name="CAN_DET" ColumnName="CAN_DET" />
+          <ScalarProperty Name="DES_DET" ColumnName="DES_DET" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DISTRITO">
+      <EntityTypeMapping TypeName="BD_PROYECTO_INTEGRADORModel.DISTRITO">
+        <MappingFragment StoreEntitySet="DISTRITO">
+          <ScalarProperty Name="IDE_DIS" ColumnName="IDE_DIS" />
+          <ScalarProperty Name="NOM_DIS" ColumnName="NOM_DIS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPLEADO">
+      <EntityTypeMapping TypeName="BD_PROYECTO_INTEGRADORModel.EMPLEADO">
+        <MappingFragment StoreEntitySet="EMPLEADO">
+          <ScalarProperty Name="IDE_EMP" ColumnName="IDE_EMP" />
+          <ScalarProperty Name="NOM_EMP" ColumnName="NOM_EMP" />
+          <ScalarProperty Name="APE_EMP" ColumnName="APE_EMP" />
+          <ScalarProperty Name="FNA_EMP" ColumnName="FNA_EMP" />
+          <ScalarProperty Name="COR_EMP" ColumnName="COR_EMP" />
+          <ScalarProperty Name="DIR_EMP" ColumnName="DIR_EMP" />
+          <ScalarProperty Name="FON_EMP" ColumnName="FON_EMP" />
+          <ScalarProperty Name="FOT_EMP" ColumnName="FOT_EMP" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="IDE_DIS" ColumnName="IDE_DIS" />
+          <ScalarProperty Name="IDE_CAR" ColumnName="IDE_CAR" />
+          <ScalarProperty Name="IDE_USU" ColumnName="IDE_USU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MARCA">
+      <EntityTypeMapping TypeName="BD_PROYECTO_INTEGRADORModel.MARCA">
+        <MappingFragment StoreEntitySet="MARCA">
+          <ScalarProperty Name="IDE_MAR" ColumnName="IDE_MAR" />
+          <ScalarProperty Name="NOM_MAR" ColumnName="NOM_MAR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MASCOTA">
+      <EntityTypeMapping TypeName="BD_PROYECTO_INTEGRADORModel.MASCOTA">
+        <MappingFragment StoreEntitySet="MASCOTA">
+          <ScalarProperty Name="IDE_MAS" ColumnName="IDE_MAS" />
+          <ScalarProperty Name="NOM_MAS" ColumnName="NOM_MAS" />
+          <ScalarProperty Name="RAZ_MAS" ColumnName="RAZ_MAS" />
+          <ScalarProperty Name="SEX_MAS" ColumnName="SEX_MAS" />
+          <ScalarProperty Name="FEC_MAS" ColumnName="FEC_MAS" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="IDE_TIPO_MASCOTA" ColumnName="IDE_TIPO_MASCOTA" />
+          <ScalarProperty Name="IDE_CLI" ColumnName="IDE_CLI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="modulo">
+      <EntityTypeMapping TypeName="BD_PROYECTO_INTEGRADORModel.modulo">
+        <MappingFragment StoreEntitySet="modulo">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="operaciones">
+      <EntityTypeMapping TypeName="BD_PROYECTO_INTEGRADORModel.operaciones">
+        <MappingFragment StoreEntitySet="operaciones">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="idModulo" ColumnName="idModulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PAIS">
+      <EntityTypeMapping TypeName="BD_PROYECTO_INTEGRADORModel.PAIS">
+        <MappingFragment StoreEntitySet="PAIS">
+          <ScalarProperty Name="IDE_PAI" ColumnName="IDE_PAI" />
+          <ScalarProperty Name="NOM_PAI" ColumnName="NOM_PAI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PEDIDO">
+      <EntityTypeMapping TypeName="BD_PROYECTO_INTEGRADORModel.PEDIDO">
+        <MappingFragment StoreEntitySet="PEDIDO">
+          <ScalarProperty Name="IDE_PED" ColumnName="IDE_PED" />
+          <ScalarProperty Name="FEC_PED" ColumnName="FEC_PED" />
+          <ScalarProperty Name="FEN_PED" ColumnName="FEN_PED" />
+          <ScalarProperty Name="ENV_PED" ColumnName="ENV_PED" />
+          <ScalarProperty Name="CAN_PED" ColumnName="CAN_PED" />
+          <ScalarProperty Name="DES_PED" ColumnName="DES_PED" />
+          <ScalarProperty Name="REF_PED" ColumnName="REF_PED" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="IDE_DIS" ColumnName="IDE_DIS" />
+          <ScalarProperty Name="IDE_CLI" ColumnName="IDE_CLI" />
+          <ScalarProperty Name="IDE_EMP" ColumnName="IDE_EMP" />
+          <ScalarProperty Name="IDE_SER" ColumnName="IDE_SER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTO">
+      <EntityTypeMapping TypeName="BD_PROYECTO_INTEGRADORModel.PRODUCTO">
+        <MappingFragment StoreEntitySet="PRODUCTO">
+          <ScalarProperty Name="IDE_PRO" ColumnName="IDE_PRO" />
+          <ScalarProperty Name="NOM_PRO" ColumnName="NOM_PRO" />
+          <ScalarProperty Name="PRE_PRO" ColumnName="PRE_PRO" />
+          <ScalarProperty Name="STOCK_PRO" ColumnName="STOCK_PRO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="IDE_PROV" ColumnName="IDE_PROV" />
+          <ScalarProperty Name="IDE_CAT" ColumnName="IDE_CAT" />
+          <ScalarProperty Name="IDE_MAR" ColumnName="IDE_MAR" />
+          <ScalarProperty Name="IMG_PRO" ColumnName="IMG_PRO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROVEEDOR">
+      <EntityTypeMapping TypeName="BD_PROYECTO_INTEGRADORModel.PROVEEDOR">
+        <MappingFragment StoreEntitySet="PROVEEDOR">
+          <ScalarProperty Name="IDE_PROV" ColumnName="IDE_PROV" />
+          <ScalarProperty Name="NOM_PROV" ColumnName="NOM_PROV" />
+          <ScalarProperty Name="DIR_PROV" ColumnName="DIR_PROV" />
+          <ScalarProperty Name="FON_PROV" ColumnName="FON_PROV" />
+          <ScalarProperty Name="COR_PROV" ColumnName="COR_PROV" />
+          <ScalarProperty Name="IDE_DIS" ColumnName="IDE_DIS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rol">
+      <EntityTypeMapping TypeName="BD_PROYECTO_INTEGRADORModel.rol">
+        <MappingFragment StoreEntitySet="rol">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rol_operacion">
+      <EntityTypeMapping TypeName="BD_PROYECTO_INTEGRADORModel.rol_operacion">
+        <MappingFragment StoreEntitySet="rol_operacion">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
+          <ScalarProperty Name="idOperacion" ColumnName="idOperacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SERVICIO">
+      <EntityTypeMapping TypeName="BD_PROYECTO_INTEGRADORModel.SERVICIO">
+        <MappingFragment StoreEntitySet="SERVICIO">
+          <ScalarProperty Name="IDE_SER" ColumnName="IDE_SER" />
+          <ScalarProperty Name="NOM_SER" ColumnName="NOM_SER" />
+          <ScalarProperty Name="DES_SER" ColumnName="DES_SER" />
+          <ScalarProperty Name="FEC_SER" ColumnName="FEC_SER" />
+          <ScalarProperty Name="PRE_SER" ColumnName="PRE_SER" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="IDE_CLI" ColumnName="IDE_CLI" />
+          <ScalarProperty Name="IDE_EMP" ColumnName="IDE_EMP" />
+          <ScalarProperty Name="IMG_SER" ColumnName="IMG_SER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPO_MASCOTA">
+      <EntityTypeMapping TypeName="BD_PROYECTO_INTEGRADORModel.TIPO_MASCOTA">
+        <MappingFragment StoreEntitySet="TIPO_MASCOTA">
+          <ScalarProperty Name="IDE_TIPO_MASCOTA" ColumnName="IDE_TIPO_MASCOTA" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRACKING">
+      <EntityTypeMapping TypeName="BD_PROYECTO_INTEGRADORModel.TRACKING">
+        <MappingFragment StoreEntitySet="TRACKING">
+          <ScalarProperty Name="IDE_TRA" ColumnName="IDE_TRA" />
+          <ScalarProperty Name="DES_TRA" ColumnName="DES_TRA" />
+          <ScalarProperty Name="FEC_TRA" ColumnName="FEC_TRA" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="IDE_PED" ColumnName="IDE_PED" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuario">
+      <EntityTypeMapping TypeName="BD_PROYECTO_INTEGRADORModel.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

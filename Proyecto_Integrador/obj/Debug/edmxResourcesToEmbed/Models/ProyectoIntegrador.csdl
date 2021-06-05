@@ -1,0 +1,662 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BD_PROYECTO_INTEGRADORModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CARGO">
+    <Key>
+      <PropertyRef Name="IDE_CAR" />
+    </Key>
+    <Property Name="IDE_CAR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DES_CAR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="EMPLEADO" Relationship="Self.FK__EMPLEADO__IDE_CA__74AE54BC" FromRole="CARGO" ToRole="EMPLEADO" />
+  </EntityType>
+  <EntityType Name="CATEGORIA">
+    <Key>
+      <PropertyRef Name="IDE_CAT" />
+    </Key>
+    <Property Name="IDE_CAT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOM_CAT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="PRODUCTO" Relationship="Self.FK__PRODUCTO__IDE_CA__797309D9" FromRole="CATEGORIA" ToRole="PRODUCTO" />
+  </EntityType>
+  <EntityType Name="CLIENTE">
+    <Key>
+      <PropertyRef Name="IDE_CLI" />
+    </Key>
+    <Property Name="IDE_CLI" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOM_CLI" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="APE_CLI" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DNI_CLI" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DIR_CLI" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="COR_CLI" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="FON_CLI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ESTADO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IDE_DIS" Type="Int32" />
+    <Property Name="IDE_USU" Type="Int32" />
+    <NavigationProperty Name="MASCOTA" Relationship="Self.FK__MASCOTA__IDE_CLI__71D1E811" FromRole="CLIENTE" ToRole="MASCOTA" />
+    <NavigationProperty Name="PEDIDO" Relationship="Self.FK__PEDIDO__IDE_CLI__07C12930" FromRole="CLIENTE" ToRole="PEDIDO" />
+    <NavigationProperty Name="SERVICIO" Relationship="Self.FK__SERVICIO__IDE_CL__7E37BEF6" FromRole="CLIENTE" ToRole="SERVICIO" />
+    <NavigationProperty Name="DISTRITO" Relationship="Self.fk_Distrito_Cli" FromRole="CLIENTE" ToRole="DISTRITO" />
+    <NavigationProperty Name="usuario" Relationship="Self.fk_id_usuario" FromRole="CLIENTE" ToRole="usuario" />
+  </EntityType>
+  <EntityType Name="DETALLE">
+    <Key>
+      <PropertyRef Name="IDE_PED" />
+      <PropertyRef Name="IDE_PRO" />
+    </Key>
+    <Property Name="IDE_PED" Type="Int32" Nullable="false" />
+    <Property Name="IDE_PRO" Type="Int32" Nullable="false" />
+    <Property Name="PRE_DET" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="CAN_DET" Type="Int32" Nullable="false" />
+    <Property Name="DES_DET" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <NavigationProperty Name="PEDIDO" Relationship="Self.FK__DETALLE__IDE_PED__10566F31" FromRole="DETALLE" ToRole="PEDIDO" />
+    <NavigationProperty Name="PRODUCTO" Relationship="Self.FK__DETALLE__IDE_PRO__114A936A" FromRole="DETALLE" ToRole="PRODUCTO" />
+  </EntityType>
+  <EntityType Name="DISTRITO">
+    <Key>
+      <PropertyRef Name="IDE_DIS" />
+    </Key>
+    <Property Name="IDE_DIS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOM_DIS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CLIENTE" Relationship="Self.fk_Distrito_Cli" FromRole="DISTRITO" ToRole="CLIENTE" />
+    <NavigationProperty Name="EMPLEADO" Relationship="Self.FK__EMPLEADO__IDE_DI__75A278F5" FromRole="DISTRITO" ToRole="EMPLEADO" />
+    <NavigationProperty Name="PEDIDO" Relationship="Self.FK__PEDIDO__IDE_DIS__09A971A2" FromRole="DISTRITO" ToRole="PEDIDO" />
+    <NavigationProperty Name="PROVEEDOR" Relationship="Self.FK__PROVEEDOR__IDE_D__6754599E" FromRole="DISTRITO" ToRole="PROVEEDOR" />
+  </EntityType>
+  <EntityType Name="EMPLEADO">
+    <Key>
+      <PropertyRef Name="IDE_EMP" />
+    </Key>
+    <Property Name="IDE_EMP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOM_EMP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="APE_EMP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FNA_EMP" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="COR_EMP" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="DIR_EMP" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="FON_EMP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="FOT_EMP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ESTADO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IDE_DIS" Type="Int32" />
+    <Property Name="IDE_CAR" Type="Int32" />
+    <Property Name="IDE_USU" Type="Int32" />
+    <NavigationProperty Name="CARGO" Relationship="Self.FK__EMPLEADO__IDE_CA__74AE54BC" FromRole="EMPLEADO" ToRole="CARGO" />
+    <NavigationProperty Name="DISTRITO" Relationship="Self.FK__EMPLEADO__IDE_DI__75A278F5" FromRole="EMPLEADO" ToRole="DISTRITO" />
+    <NavigationProperty Name="usuario" Relationship="Self.FK__EMPLEADO__IDE_US__76969D2E" FromRole="EMPLEADO" ToRole="usuario" />
+    <NavigationProperty Name="PEDIDO" Relationship="Self.FK__PEDIDO__IDE_EMP__08B54D69" FromRole="EMPLEADO" ToRole="PEDIDO" />
+    <NavigationProperty Name="SERVICIO" Relationship="Self.FK__SERVICIO__IDE_EM__7F2BE32F" FromRole="EMPLEADO" ToRole="SERVICIO" />
+  </EntityType>
+  <EntityType Name="MARCA">
+    <Key>
+      <PropertyRef Name="IDE_MAR" />
+    </Key>
+    <Property Name="IDE_MAR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOM_MAR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="PRODUCTO" Relationship="Self.FK__PRODUCTO__IDE_MA__7A672E12" FromRole="MARCA" ToRole="PRODUCTO" />
+  </EntityType>
+  <EntityType Name="MASCOTA">
+    <Key>
+      <PropertyRef Name="IDE_MAS" />
+    </Key>
+    <Property Name="IDE_MAS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOM_MAS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RAZ_MAS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SEX_MAS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FEC_MAS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ESTADO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IDE_TIPO_MASCOTA" Type="Int32" />
+    <Property Name="IDE_CLI" Type="Int32" />
+    <NavigationProperty Name="CLIENTE" Relationship="Self.FK__MASCOTA__IDE_CLI__71D1E811" FromRole="MASCOTA" ToRole="CLIENTE" />
+    <NavigationProperty Name="TIPO_MASCOTA" Relationship="Self.FK__MASCOTA__IDE_TIP__70DDC3D8" FromRole="MASCOTA" ToRole="TIPO_MASCOTA" />
+  </EntityType>
+  <EntityType Name="modulo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="operaciones" Relationship="Self.FK_operaciones_modulo" FromRole="modulo" ToRole="operaciones" />
+  </EntityType>
+  <EntityType Name="operaciones">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="idModulo" Type="Int32" />
+    <NavigationProperty Name="modulo" Relationship="Self.FK_operaciones_modulo" FromRole="operaciones" ToRole="modulo" />
+    <NavigationProperty Name="rol_operacion" Relationship="Self.FK_rol_operacion_operaciones" FromRole="operaciones" ToRole="rol_operacion" />
+  </EntityType>
+  <EntityType Name="PAIS">
+    <Key>
+      <PropertyRef Name="IDE_PAI" />
+    </Key>
+    <Property Name="IDE_PAI" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOM_PAI" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PEDIDO">
+    <Key>
+      <PropertyRef Name="IDE_PED" />
+    </Key>
+    <Property Name="IDE_PED" Type="Int32" Nullable="false" />
+    <Property Name="FEC_PED" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FEN_PED" Type="DateTime" Precision="0" />
+    <Property Name="ENV_PED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CAN_PED" Type="Int32" />
+    <Property Name="DES_PED" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="REF_PED" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ESTADO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IDE_DIS" Type="Int32" />
+    <Property Name="IDE_CLI" Type="Int32" />
+    <Property Name="IDE_EMP" Type="Int32" />
+    <Property Name="IDE_SER" Type="Int32" />
+    <NavigationProperty Name="CLIENTE" Relationship="Self.FK__PEDIDO__IDE_CLI__07C12930" FromRole="PEDIDO" ToRole="CLIENTE" />
+    <NavigationProperty Name="DETALLE" Relationship="Self.FK__DETALLE__IDE_PED__10566F31" FromRole="PEDIDO" ToRole="DETALLE" />
+    <NavigationProperty Name="DISTRITO" Relationship="Self.FK__PEDIDO__IDE_DIS__09A971A2" FromRole="PEDIDO" ToRole="DISTRITO" />
+    <NavigationProperty Name="EMPLEADO" Relationship="Self.FK__PEDIDO__IDE_EMP__08B54D69" FromRole="PEDIDO" ToRole="EMPLEADO" />
+    <NavigationProperty Name="SERVICIO" Relationship="Self.FK__PEDIDO__IDE_SER__0A9D95DB" FromRole="PEDIDO" ToRole="SERVICIO" />
+    <NavigationProperty Name="TRACKING" Relationship="Self.FK__TRACKING__IDE_PE__0D7A0286" FromRole="PEDIDO" ToRole="TRACKING" />
+  </EntityType>
+  <EntityType Name="PRODUCTO">
+    <Key>
+      <PropertyRef Name="IDE_PRO" />
+    </Key>
+    <Property Name="IDE_PRO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOM_PRO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PRE_PRO" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="STOCK_PRO" Type="Int32" Nullable="false" />
+    <Property Name="ESTADO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IDE_PROV" Type="Int32" />
+    <Property Name="IDE_CAT" Type="Int32" />
+    <Property Name="IDE_MAR" Type="Int32" />
+    <Property Name="IMG_PRO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CATEGORIA" Relationship="Self.FK__PRODUCTO__IDE_CA__797309D9" FromRole="PRODUCTO" ToRole="CATEGORIA" />
+    <NavigationProperty Name="DETALLE" Relationship="Self.FK__DETALLE__IDE_PRO__114A936A" FromRole="PRODUCTO" ToRole="DETALLE" />
+    <NavigationProperty Name="MARCA" Relationship="Self.FK__PRODUCTO__IDE_MA__7A672E12" FromRole="PRODUCTO" ToRole="MARCA" />
+    <NavigationProperty Name="PROVEEDOR" Relationship="Self.FK__PRODUCTO__IDE_PR__7B5B524B" FromRole="PRODUCTO" ToRole="PROVEEDOR" />
+  </EntityType>
+  <EntityType Name="PROVEEDOR">
+    <Key>
+      <PropertyRef Name="IDE_PROV" />
+    </Key>
+    <Property Name="IDE_PROV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOM_PROV" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DIR_PROV" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FON_PROV" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="COR_PROV" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IDE_DIS" Type="Int32" />
+    <NavigationProperty Name="DISTRITO" Relationship="Self.FK__PROVEEDOR__IDE_D__6754599E" FromRole="PROVEEDOR" ToRole="DISTRITO" />
+    <NavigationProperty Name="PRODUCTO" Relationship="Self.FK__PRODUCTO__IDE_PR__7B5B524B" FromRole="PROVEEDOR" ToRole="PRODUCTO" />
+  </EntityType>
+  <EntityType Name="rol">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="rol_operacion" Relationship="Self.FK_rol_operacion_rol" FromRole="rol" ToRole="rol_operacion" />
+    <NavigationProperty Name="usuario" Relationship="Self.FK_usuario_rol" FromRole="rol" ToRole="usuario" />
+  </EntityType>
+  <EntityType Name="rol_operacion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idRol" Type="Int32" />
+    <Property Name="idOperacion" Type="Int32" />
+    <NavigationProperty Name="operaciones" Relationship="Self.FK_rol_operacion_operaciones" FromRole="rol_operacion" ToRole="operaciones" />
+    <NavigationProperty Name="rol" Relationship="Self.FK_rol_operacion_rol" FromRole="rol_operacion" ToRole="rol" />
+  </EntityType>
+  <EntityType Name="SERVICIO">
+    <Key>
+      <PropertyRef Name="IDE_SER" />
+    </Key>
+    <Property Name="IDE_SER" Type="Int32" Nullable="false" />
+    <Property Name="NOM_SER" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DES_SER" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="FEC_SER" Type="DateTime" Precision="0" />
+    <Property Name="PRE_SER" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ESTADO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IDE_CLI" Type="Int32" />
+    <Property Name="IDE_EMP" Type="Int32" />
+    <Property Name="IMG_SER" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CLIENTE" Relationship="Self.FK__SERVICIO__IDE_CL__7E37BEF6" FromRole="SERVICIO" ToRole="CLIENTE" />
+    <NavigationProperty Name="EMPLEADO" Relationship="Self.FK__SERVICIO__IDE_EM__7F2BE32F" FromRole="SERVICIO" ToRole="EMPLEADO" />
+    <NavigationProperty Name="PEDIDO" Relationship="Self.FK__PEDIDO__IDE_SER__0A9D95DB" FromRole="SERVICIO" ToRole="PEDIDO" />
+  </EntityType>
+  <EntityType Name="TIPO_MASCOTA">
+    <Key>
+      <PropertyRef Name="IDE_TIPO_MASCOTA" />
+    </Key>
+    <Property Name="IDE_TIPO_MASCOTA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="MASCOTA" Relationship="Self.FK__MASCOTA__IDE_TIP__70DDC3D8" FromRole="TIPO_MASCOTA" ToRole="MASCOTA" />
+  </EntityType>
+  <EntityType Name="TRACKING">
+    <Key>
+      <PropertyRef Name="IDE_TRA" />
+    </Key>
+    <Property Name="IDE_TRA" Type="Int32" Nullable="false" />
+    <Property Name="DES_TRA" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FEC_TRA" Type="DateTime" Precision="0" />
+    <Property Name="ESTADO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IDE_PED" Type="Int32" />
+    <NavigationProperty Name="PEDIDO" Relationship="Self.FK__TRACKING__IDE_PE__0D7A0286" FromRole="TRACKING" ToRole="PEDIDO" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="fecha" Type="DateTime" Precision="3" />
+    <Property Name="idRol" Type="Int32" />
+    <NavigationProperty Name="CLIENTE" Relationship="Self.fk_id_usuario" FromRole="usuario" ToRole="CLIENTE" />
+    <NavigationProperty Name="EMPLEADO" Relationship="Self.FK__EMPLEADO__IDE_US__76969D2E" FromRole="usuario" ToRole="EMPLEADO" />
+    <NavigationProperty Name="rol" Relationship="Self.FK_usuario_rol" FromRole="usuario" ToRole="rol" />
+  </EntityType>
+  <Association Name="FK__EMPLEADO__IDE_CA__74AE54BC">
+    <End Role="CARGO" Type="Self.CARGO" Multiplicity="0..1" />
+    <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CARGO">
+        <PropertyRef Name="IDE_CAR" />
+      </Principal>
+      <Dependent Role="EMPLEADO">
+        <PropertyRef Name="IDE_CAR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PRODUCTO__IDE_CA__797309D9">
+    <End Role="CATEGORIA" Type="Self.CATEGORIA" Multiplicity="0..1" />
+    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CATEGORIA">
+        <PropertyRef Name="IDE_CAT" />
+      </Principal>
+      <Dependent Role="PRODUCTO">
+        <PropertyRef Name="IDE_CAT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MASCOTA__IDE_CLI__71D1E811">
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="0..1" />
+    <End Role="MASCOTA" Type="Self.MASCOTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTE">
+        <PropertyRef Name="IDE_CLI" />
+      </Principal>
+      <Dependent Role="MASCOTA">
+        <PropertyRef Name="IDE_CLI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PEDIDO__IDE_CLI__07C12930">
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="0..1" />
+    <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTE">
+        <PropertyRef Name="IDE_CLI" />
+      </Principal>
+      <Dependent Role="PEDIDO">
+        <PropertyRef Name="IDE_CLI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SERVICIO__IDE_CL__7E37BEF6">
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="0..1" />
+    <End Role="SERVICIO" Type="Self.SERVICIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTE">
+        <PropertyRef Name="IDE_CLI" />
+      </Principal>
+      <Dependent Role="SERVICIO">
+        <PropertyRef Name="IDE_CLI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Distrito_Cli">
+    <End Role="DISTRITO" Type="Self.DISTRITO" Multiplicity="0..1" />
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DISTRITO">
+        <PropertyRef Name="IDE_DIS" />
+      </Principal>
+      <Dependent Role="CLIENTE">
+        <PropertyRef Name="IDE_DIS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_id_usuario">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="CLIENTE">
+        <PropertyRef Name="IDE_USU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DETALLE__IDE_PED__10566F31">
+    <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="1" />
+    <End Role="DETALLE" Type="Self.DETALLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PEDIDO">
+        <PropertyRef Name="IDE_PED" />
+      </Principal>
+      <Dependent Role="DETALLE">
+        <PropertyRef Name="IDE_PED" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DETALLE__IDE_PRO__114A936A">
+    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
+    <End Role="DETALLE" Type="Self.DETALLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTO">
+        <PropertyRef Name="IDE_PRO" />
+      </Principal>
+      <Dependent Role="DETALLE">
+        <PropertyRef Name="IDE_PRO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EMPLEADO__IDE_DI__75A278F5">
+    <End Role="DISTRITO" Type="Self.DISTRITO" Multiplicity="0..1" />
+    <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DISTRITO">
+        <PropertyRef Name="IDE_DIS" />
+      </Principal>
+      <Dependent Role="EMPLEADO">
+        <PropertyRef Name="IDE_DIS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PEDIDO__IDE_DIS__09A971A2">
+    <End Role="DISTRITO" Type="Self.DISTRITO" Multiplicity="0..1" />
+    <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DISTRITO">
+        <PropertyRef Name="IDE_DIS" />
+      </Principal>
+      <Dependent Role="PEDIDO">
+        <PropertyRef Name="IDE_DIS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PROVEEDOR__IDE_D__6754599E">
+    <End Role="DISTRITO" Type="Self.DISTRITO" Multiplicity="0..1" />
+    <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DISTRITO">
+        <PropertyRef Name="IDE_DIS" />
+      </Principal>
+      <Dependent Role="PROVEEDOR">
+        <PropertyRef Name="IDE_DIS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EMPLEADO__IDE_US__76969D2E">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
+    <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="EMPLEADO">
+        <PropertyRef Name="IDE_USU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PEDIDO__IDE_EMP__08B54D69">
+    <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="0..1" />
+    <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLEADO">
+        <PropertyRef Name="IDE_EMP" />
+      </Principal>
+      <Dependent Role="PEDIDO">
+        <PropertyRef Name="IDE_EMP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SERVICIO__IDE_EM__7F2BE32F">
+    <End Role="EMPLEADO" Type="Self.EMPLEADO" Multiplicity="0..1" />
+    <End Role="SERVICIO" Type="Self.SERVICIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLEADO">
+        <PropertyRef Name="IDE_EMP" />
+      </Principal>
+      <Dependent Role="SERVICIO">
+        <PropertyRef Name="IDE_EMP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PRODUCTO__IDE_MA__7A672E12">
+    <End Role="MARCA" Type="Self.MARCA" Multiplicity="0..1" />
+    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MARCA">
+        <PropertyRef Name="IDE_MAR" />
+      </Principal>
+      <Dependent Role="PRODUCTO">
+        <PropertyRef Name="IDE_MAR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MASCOTA__IDE_TIP__70DDC3D8">
+    <End Role="TIPO_MASCOTA" Type="Self.TIPO_MASCOTA" Multiplicity="0..1" />
+    <End Role="MASCOTA" Type="Self.MASCOTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPO_MASCOTA">
+        <PropertyRef Name="IDE_TIPO_MASCOTA" />
+      </Principal>
+      <Dependent Role="MASCOTA">
+        <PropertyRef Name="IDE_TIPO_MASCOTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_operaciones_modulo">
+    <End Role="modulo" Type="Self.modulo" Multiplicity="0..1" />
+    <End Role="operaciones" Type="Self.operaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="modulo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="operaciones">
+        <PropertyRef Name="idModulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_rol_operacion_operaciones">
+    <End Role="operaciones" Type="Self.operaciones" Multiplicity="0..1" />
+    <End Role="rol_operacion" Type="Self.rol_operacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="operaciones">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="rol_operacion">
+        <PropertyRef Name="idOperacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PEDIDO__IDE_SER__0A9D95DB">
+    <End Role="SERVICIO" Type="Self.SERVICIO" Multiplicity="0..1" />
+    <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SERVICIO">
+        <PropertyRef Name="IDE_SER" />
+      </Principal>
+      <Dependent Role="PEDIDO">
+        <PropertyRef Name="IDE_SER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TRACKING__IDE_PE__0D7A0286">
+    <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="0..1" />
+    <End Role="TRACKING" Type="Self.TRACKING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PEDIDO">
+        <PropertyRef Name="IDE_PED" />
+      </Principal>
+      <Dependent Role="TRACKING">
+        <PropertyRef Name="IDE_PED" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PRODUCTO__IDE_PR__7B5B524B">
+    <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="0..1" />
+    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROVEEDOR">
+        <PropertyRef Name="IDE_PROV" />
+      </Principal>
+      <Dependent Role="PRODUCTO">
+        <PropertyRef Name="IDE_PROV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_rol_operacion_rol">
+    <End Role="rol" Type="Self.rol" Multiplicity="0..1" />
+    <End Role="rol_operacion" Type="Self.rol_operacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rol">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="rol_operacion">
+        <PropertyRef Name="idRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_usuario_rol">
+    <End Role="rol" Type="Self.rol" Multiplicity="0..1" />
+    <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rol">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="usuario">
+        <PropertyRef Name="idRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BD_PROYECTO_INTEGRADOREntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CARGO" EntityType="Self.CARGO" />
+    <EntitySet Name="CATEGORIA" EntityType="Self.CATEGORIA" />
+    <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" />
+    <EntitySet Name="DETALLE" EntityType="Self.DETALLE" />
+    <EntitySet Name="DISTRITO" EntityType="Self.DISTRITO" />
+    <EntitySet Name="EMPLEADO" EntityType="Self.EMPLEADO" />
+    <EntitySet Name="MARCA" EntityType="Self.MARCA" />
+    <EntitySet Name="MASCOTA" EntityType="Self.MASCOTA" />
+    <EntitySet Name="modulo" EntityType="Self.modulo" />
+    <EntitySet Name="operaciones" EntityType="Self.operaciones" />
+    <EntitySet Name="PAIS" EntityType="Self.PAIS" />
+    <EntitySet Name="PEDIDO" EntityType="Self.PEDIDO" />
+    <EntitySet Name="PRODUCTO" EntityType="Self.PRODUCTO" />
+    <EntitySet Name="PROVEEDOR" EntityType="Self.PROVEEDOR" />
+    <EntitySet Name="rol" EntityType="Self.rol" />
+    <EntitySet Name="rol_operacion" EntityType="Self.rol_operacion" />
+    <EntitySet Name="SERVICIO" EntityType="Self.SERVICIO" />
+    <EntitySet Name="TIPO_MASCOTA" EntityType="Self.TIPO_MASCOTA" />
+    <EntitySet Name="TRACKING" EntityType="Self.TRACKING" />
+    <EntitySet Name="usuario" EntityType="Self.usuario" />
+    <AssociationSet Name="FK__EMPLEADO__IDE_CA__74AE54BC" Association="Self.FK__EMPLEADO__IDE_CA__74AE54BC">
+      <End Role="CARGO" EntitySet="CARGO" />
+      <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PRODUCTO__IDE_CA__797309D9" Association="Self.FK__PRODUCTO__IDE_CA__797309D9">
+      <End Role="CATEGORIA" EntitySet="CATEGORIA" />
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MASCOTA__IDE_CLI__71D1E811" Association="Self.FK__MASCOTA__IDE_CLI__71D1E811">
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+      <End Role="MASCOTA" EntitySet="MASCOTA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PEDIDO__IDE_CLI__07C12930" Association="Self.FK__PEDIDO__IDE_CLI__07C12930">
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+      <End Role="PEDIDO" EntitySet="PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SERVICIO__IDE_CL__7E37BEF6" Association="Self.FK__SERVICIO__IDE_CL__7E37BEF6">
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+      <End Role="SERVICIO" EntitySet="SERVICIO" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Distrito_Cli" Association="Self.fk_Distrito_Cli">
+      <End Role="DISTRITO" EntitySet="DISTRITO" />
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="fk_id_usuario" Association="Self.fk_id_usuario">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DETALLE__IDE_PED__10566F31" Association="Self.FK__DETALLE__IDE_PED__10566F31">
+      <End Role="PEDIDO" EntitySet="PEDIDO" />
+      <End Role="DETALLE" EntitySet="DETALLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DETALLE__IDE_PRO__114A936A" Association="Self.FK__DETALLE__IDE_PRO__114A936A">
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+      <End Role="DETALLE" EntitySet="DETALLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EMPLEADO__IDE_DI__75A278F5" Association="Self.FK__EMPLEADO__IDE_DI__75A278F5">
+      <End Role="DISTRITO" EntitySet="DISTRITO" />
+      <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PEDIDO__IDE_DIS__09A971A2" Association="Self.FK__PEDIDO__IDE_DIS__09A971A2">
+      <End Role="DISTRITO" EntitySet="DISTRITO" />
+      <End Role="PEDIDO" EntitySet="PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PROVEEDOR__IDE_D__6754599E" Association="Self.FK__PROVEEDOR__IDE_D__6754599E">
+      <End Role="DISTRITO" EntitySet="DISTRITO" />
+      <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EMPLEADO__IDE_US__76969D2E" Association="Self.FK__EMPLEADO__IDE_US__76969D2E">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PEDIDO__IDE_EMP__08B54D69" Association="Self.FK__PEDIDO__IDE_EMP__08B54D69">
+      <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+      <End Role="PEDIDO" EntitySet="PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SERVICIO__IDE_EM__7F2BE32F" Association="Self.FK__SERVICIO__IDE_EM__7F2BE32F">
+      <End Role="EMPLEADO" EntitySet="EMPLEADO" />
+      <End Role="SERVICIO" EntitySet="SERVICIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PRODUCTO__IDE_MA__7A672E12" Association="Self.FK__PRODUCTO__IDE_MA__7A672E12">
+      <End Role="MARCA" EntitySet="MARCA" />
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MASCOTA__IDE_TIP__70DDC3D8" Association="Self.FK__MASCOTA__IDE_TIP__70DDC3D8">
+      <End Role="TIPO_MASCOTA" EntitySet="TIPO_MASCOTA" />
+      <End Role="MASCOTA" EntitySet="MASCOTA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_operaciones_modulo" Association="Self.FK_operaciones_modulo">
+      <End Role="modulo" EntitySet="modulo" />
+      <End Role="operaciones" EntitySet="operaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_rol_operacion_operaciones" Association="Self.FK_rol_operacion_operaciones">
+      <End Role="operaciones" EntitySet="operaciones" />
+      <End Role="rol_operacion" EntitySet="rol_operacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PEDIDO__IDE_SER__0A9D95DB" Association="Self.FK__PEDIDO__IDE_SER__0A9D95DB">
+      <End Role="SERVICIO" EntitySet="SERVICIO" />
+      <End Role="PEDIDO" EntitySet="PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TRACKING__IDE_PE__0D7A0286" Association="Self.FK__TRACKING__IDE_PE__0D7A0286">
+      <End Role="PEDIDO" EntitySet="PEDIDO" />
+      <End Role="TRACKING" EntitySet="TRACKING" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PRODUCTO__IDE_PR__7B5B524B" Association="Self.FK__PRODUCTO__IDE_PR__7B5B524B">
+      <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_rol_operacion_rol" Association="Self.FK_rol_operacion_rol">
+      <End Role="rol" EntitySet="rol" />
+      <End Role="rol_operacion" EntitySet="rol_operacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_usuario_rol" Association="Self.FK_usuario_rol">
+      <End Role="rol" EntitySet="rol" />
+      <End Role="usuario" EntitySet="usuario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

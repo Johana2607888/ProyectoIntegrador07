@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Proyecto_Integrador.Model.Cliente>
+
+@{
+    ViewBag.Title = "ListadoCliente";
+    Layout = "~/Views/Shared/_LayoutPrincipal.cshtml";
+}
+<h2 style="color:Highlight;margin-top:-20px">Listado Cliente</h2>
+<table class="table"  style="width: 98%;max-width: 100%;margin-bottom: 20px;background-color: white;margin-left: -1px;">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dni)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.correo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.desDistrito)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dni)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.correo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.desDistrito)
+        </td>
+        <td>
+            @Html.ActionLink("Actualizar", "modificarCliente", new { id = item.codigo }, new { @class = "btn btn-info" })
+            @Html.ActionLink("Eliminar", "eliminarCliente", new { id = item.codigo }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+</table>
+<script>
+    if ("@ViewBag.Error" != "")
+            swal("@ViewBag.Error", "Para Continuar presione el Boton", "error");
+
+        if ("@ViewBag.Success" != "")
+            swal("@ViewBag.Success", "Para Continuar presione el Boton", "success");
+
+        if ("@ViewBag.Info" != "")
+            swal("@ViewBag.Info", "Para Continuar presione el Boton", "info");
+
+</script>

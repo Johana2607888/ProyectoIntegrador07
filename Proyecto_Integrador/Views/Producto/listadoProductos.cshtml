@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Proyecto_Integrador.Model.Producto>
+
+@{
+    ViewBag.Title = "listadoProductos";
+    Layout = "~/Views/Shared/_LayoutPrincipal.cshtml";
+}
+
+
+<p>
+
+    @Html.ActionLink("Nuevo Producto", "registrarProducto", null, new { @class = "btn btn-success" })
+
+</p>
+
+<table class="table" style="width: 98%;max-width: 100%;margin-bottom: 20px;background-color: white;margin-left: -1px;">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.precio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.unidades)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.foto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.proveedor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.categoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.marca)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.codigo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.precio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.unidades)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.foto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.proveedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.categoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.stock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.marca)
+            </td>
+            <td>
+
+                @Html.ActionLink("Actualizar", "modificarProducto", new { id = item.codigo }, new { @class = "btn btn-info" })
+                @Html.ActionLink("Eliminar", "eliminarProducto", new { id = item.codigo }, new { @class = "btn btn-danger" })
+
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+<script>
+    if ("@ViewBag.Error" != "")
+            swal("@ViewBag.Error", "Para Continuar presione el Boton", "error");
+
+        if ("@ViewBag.Success" != "")
+            swal("@ViewBag.Success", "Para Continuar presione el Boton", "success");
+
+        if ("@ViewBag.Info" != "")
+            swal("@ViewBag.Info", "Para Continuar presione el Boton", "info");
+
+</script>

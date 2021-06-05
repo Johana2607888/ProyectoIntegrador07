@@ -1,0 +1,28 @@
+﻿
+@model IEnumerable<Proyecto_Integrador.Model.Producto>
+@foreach (var elemento in Model)
+{
+    <section class="bloque">
+        <img class="imgArt" src="@Url.Content(elemento.foto)" />
+        CODIGO: @elemento.codigo <br />
+        DESCRIPCION: @elemento.nombre <br />
+        PRECIO: @elemento.precio.ToString("0.00")<br />
+        STOCK ACTUAL: @elemento.stock<br />
+
+        @Html.ActionLink("ADQUIRIR", "seleccionaProducto",new { id=elemento.codigo },
+                         new { @class="btn btn-success" })
+
+    </section>
+}
+
+<script>
+    if ("@ViewBag.Error" != "")
+            swal("@ViewBag.Error", "Para Continuar presione el Boton", "error");
+
+        if ("@ViewBag.Success" != "")
+            swal("@ViewBag.Success", "Para Continuar presione el Boton", "success");
+
+        if ("@ViewBag.Info" != "")
+            swal("@ViewBag.Info", "Para Continuar presione el Boton", "info");
+
+</script>
