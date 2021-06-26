@@ -43,5 +43,9 @@ namespace Proyecto_Integrador.Model
         [DisplayName("FOTO")]
         public string foto { get; set; }
 
+        [DisplayName("INCIDENCIA")]
+        public string incidencia { get; set; }
+        [DisplayName("OBSERVACION")]
+        public string observacion { get; set; }
     }
 }

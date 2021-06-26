@@ -1,0 +1,92 @@
+﻿@model IEnumerable<Proyecto_Integrador.Model.Historial>
+
+@{
+    ViewBag.Title = "listadoHistorial";
+    Layout = "~/Views/Shared/_LayoutPrincipal.cshtml";
+}
+
+<h2 style="color:Highlight;margin-top:-10px">Historial</h2>
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<table class="table" style="width: 98%;max-width: 100%;margin-bottom: 20px;background-color: white;margin-left: -1px;">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.codigo)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.id_mascota)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.mascota)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tipomascota)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.incidencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechaincidencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.observacion)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.codigo)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.id_mascota)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.mascota)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipomascota)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.incidencia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fechaincidencia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.observacion)
+            </td>
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+            </td>
+        </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Regresar", "listadoMascotas", null, new { @class = "btn btn-primary" })
+</div>
+
+<script>
+    if ("@ViewBag.Error" != "")
+            swal("@ViewBag.Error", "Para Continuar presione el Boton", "error");
+
+        if ("@ViewBag.Success" != "")
+            swal("@ViewBag.Success", "Para Continuar presione el Boton", "success");
+
+        if ("@ViewBag.Info" != "")
+            swal("@ViewBag.Info", "Para Continuar presione el Boton", "info");
+
+</script>

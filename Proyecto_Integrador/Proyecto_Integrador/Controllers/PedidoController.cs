@@ -187,7 +187,7 @@ namespace Proyecto_Integrador.Controllers
                 cmd.Parameters.AddWithValue("@comenta", objP.comentario);
                 int x = cmd.ExecuteNonQuery();
                 tr.Commit();
-                ViewBag.Success = " Registro Correcto..!!!";
+                ViewBag.Success = " Pedido Actualizado..!!!";
 
             }
             catch

@@ -77,11 +77,39 @@ namespace Proyecto_Integrador.Controllers
 
         }
 
+        List<Mascota> listMascotasTotal()
+        {
+            cn.Open();
+            List<Mascota> aMascotas = new List<Mascota>();
+            SqlCommand cmd = new SqlCommand("SP_LISTADOMASCOTA", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+                aMascotas.Add(new Mascota()
+                {
+                    codigo = int.Parse(dr[0].ToString()),
+                    nombre = dr[1].ToString(),
+                    raza = dr[2].ToString(),
+                    sexo = dr[3].ToString(),
+                    tipomascota = dr[4].ToString(),
+                    foto = dr[5].ToString()
+
+                });
+
+            cn.Close();
+            return aMascotas;
+
+        }
+
         public ActionResult listadoMascotas()
         {
             
-            return View(listMascotas());
+            return View(listMascotasTotal());
         }
+
+
+
+
 
         public ActionResult MascotasClientes()
         {
@@ -386,7 +414,7 @@ namespace Proyecto_Integrador.Controllers
             cn.Open();
             List<Historial> aHistorial = new List<Historial>();
             SqlCommand cmd = new SqlCommand("SP_LISTAHISTORIAL", cn);
-            cmd.Parameters.AddWithValue("@ide_mas", int.Parse(Session["idUser"].ToString()));
+            cmd.Parameters.AddWithValue("@ide_mas",id);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
@@ -409,5 +437,59 @@ namespace Proyecto_Integrador.Controllers
             ViewBag.Message = "Bienvenido(a) " + Session["User"];
             return View(listHistorial(id));
         }
+
+        public ActionResult registrarIncidente(int id)
+        {
+            ViewBag.Message = "Bienvenido(a) " + Session["User"];
+            Mascota objM = listMascotasTotal().Where(p => p.codigo == id).FirstOrDefault();
+            return View(objM);
+        }
+
+        [HttpPost]
+        public ActionResult registrarIncidente(Mascota objM)
+        {
+
+            ViewBag.Success = "";
+            ViewBag.Error = "";
+            ViewBag.Info = "";
+
+            if (objM.incidencia == null)
+            {
+                ViewBag.Info = "Ingrese la incidencia";
+                return View(objM);
+            }
+
+            if (objM.observacion == null)
+            {
+                ViewBag.Info = "Ingrese la observacion";
+                return View(objM);
+            }
+
+            cn.Open();
+            SqlTransaction tr = cn.BeginTransaction(IsolationLevel.Serializable);
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SP_GRABARHISTORIAL", cn, tr);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ide_mas", objM.codigo);
+                cmd.Parameters.AddWithValue("@incidencia", objM.incidencia);
+                cmd.Parameters.AddWithValue("@obser", objM.observacion);
+                int x = cmd.ExecuteNonQuery();
+                tr.Commit();
+                ViewBag.Success = x.ToString() + " Incidencia Registrada..!!!";
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = ex.Message;
+                tr.Rollback();
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+            return View("~/Views/Mascota/registrarIncidente.cshtml");
+        }
+
     }
 }

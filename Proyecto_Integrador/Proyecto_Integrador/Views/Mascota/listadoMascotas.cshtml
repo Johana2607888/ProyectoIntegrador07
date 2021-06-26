@@ -5,9 +5,9 @@
     Layout = "~/Views/Shared/_LayoutPrincipal.cshtml";
 }
 
-<p>
+@*<p>
     @Html.ActionLink("Nueva Mascota", "registrarMascota", null, new { @class = "btn btn-success" })
-</p>
+</p>*@
 <table class="table" style="width: 98%;max-width: 100%;margin-bottom: 20px;background-color: white;margin-left: -1px;">
     <tr>
         <th>
@@ -34,10 +34,10 @@
             <th>
                 @Html.DisplayNameFor(model => model.servicio)
             </th>*@
-        @*<th>
+        <th>
                 @Html.DisplayNameFor(model => model.foto)
-            </th>*@
-        <th></th>
+            </th>
+
     </tr>
 
     @foreach (var item in Model)
@@ -67,14 +67,15 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.servicio)
                 </td>*@
-            @*<td>
-                    @Html.DisplayFor(modelItem => item.foto)
-                </td>*@
-        <td>
-            @Html.ActionLink("Actualizar", "modificarMascota", new { id = item.codigo }, new { @class = "btn btn-info" })
-            @Html.ActionLink("Eliminar", "eliminarMascota", new { id = item.codigo }, new { @class = "btn btn-danger" })
-            @Html.ActionLink("Historial", "verHistorial", new { id = item.codigo }, new { @class = "btn btn-success" })
-        </td>
+                <td>
+                    <img class="foto" src="@Url.Content(item.foto)" width="30" />
+                </td>
+                <td>
+                    @Html.ActionLink("Actualizar", "modificarMascota", new { id = item.codigo }, new { @class = "btn btn-info" })
+                    @Html.ActionLink("Eliminar", "eliminarMascota", new { id = item.codigo }, new { @class = "btn btn-danger" })
+                    @Html.ActionLink("Historial", "listadoHistorial", new { id = item.codigo }, new { @class = "btn btn-success" })
+                    @Html.ActionLink("Registrar Incidente", "registrarIncidente", new { id = item.codigo }, new { @class = "btn btn-primary" })
+                </td>
         </tr>
     }
 

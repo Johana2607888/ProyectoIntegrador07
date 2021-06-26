@@ -394,6 +394,8 @@
     <Content Include="Views\Pedido\ListadodePedidos.cshtml" />
     <Content Include="Views\Pedido\ListadodePedidosDetalle.cshtml" />
     <Content Include="Views\Pedido\AtenderPedido.cshtml" />
+    <Content Include="Views\Mascota\listadoHistorial.cshtml" />
+    <Content Include="Views\Mascota\registrarIncidente.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

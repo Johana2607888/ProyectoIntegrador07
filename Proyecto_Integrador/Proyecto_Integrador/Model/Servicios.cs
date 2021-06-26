@@ -18,7 +18,7 @@ namespace Proyecto_Integrador.Model
         [MaxLength(length: 20, ErrorMessage = "Maximo 20 dígitos")]
         [DisplayName("DESCRIPCIÓN")]
         public string descripcion { get; set; }
-        [MaxLength(length: 15, ErrorMessage = "Maximo 15 dígitos")]
+
         [DisplayName("FECHA_SERVICIO")]
         public DateTime fechaservicio { get; set; }
 
