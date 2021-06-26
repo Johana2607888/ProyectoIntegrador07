@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Proyecto_Integrador.Model.Producto>
+
+@{
+    ViewBag.Title = "carritoCompras";
+    Layout = "~/Views/Shared/_LayoutPrincipal.cshtml";
+    
+}
+
+
+
+<p>
+    @Html.ActionLink("REALIZAR COMPRA", "Comprar", null, new { @class = "btn btn-primary" })
+</p>
+
+
+
+@Html.Partial("_PartialProducto")
+
+
+<script>
+    if ("@ViewBag.Error" != "")
+            swal("@ViewBag.Error", "Para Continuar presione el Boton", "error");
+
+        if ("@ViewBag.Success" != "")
+            swal("@ViewBag.Success", "Para Continuar presione el Boton", "success");
+
+        if ("@ViewBag.Info" != "")
+            swal("@ViewBag.Info", "Para Continuar presione el Boton", "info");
+
+</script>

@@ -1,0 +1,26 @@
+﻿@model Proyecto_Integrador.Model.Producto
+
+@{
+    ViewBag.Title = "seleccionaProducto";
+    Layout = "~/Views/Shared/_LayoutPrincipal.cshtml";
+}
+
+<section id="columna1">
+    @Html.Partial("_PartialRegistro")
+</section>
+
+<section id="columna2">
+    @using (Html.BeginForm("agregarProducto", "Tienda"))
+    {
+        <section class="panel panel-primary">
+            <section class="panel-heading" style="background-color:#0DB8B1">
+                PROCESO DE SELECCION
+            </section>
+            <section class="panel-body">
+                @Html.Hidden("id", Model.codigo)
+                @Html.TextBox("cant", "", new { @class = "form-control" })
+                <input class="btn btn-primary" type="submit" value="ACEPTAR" style="margin:0;border: 1px solid;color: white;padding: 9px 9px;text-align: center;text-decoration: none;display: inline-block;text-transform: uppercase;font-size: 12px;"/>              @Html.ActionLink("CANCELAR", "carritoCompras", "", new { @class = "btn btn-danger" })
+            </section>
+        </section>
+    }
+</section>

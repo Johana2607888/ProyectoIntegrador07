@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Proyecto_Integrador.Model.Mascota>
+
+@{
+    ViewBag.Title = "listadoMascotas";
+    Layout = "~/Views/Shared/_LayoutPrincipal.cshtml";
+}
+
+<p>
+    @Html.ActionLink("Nueva Mascota", "registrarMascota", null, new { @class = "btn btn-success" })
+</p>
+<table class="table" style="width: 98%;max-width: 100%;margin-bottom: 20px;background-color: white;margin-left: -1px;">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.raza)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sexo)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.fechanac)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.tipomascota)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.cliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.servicio)
+            </th>*@
+        @*<th>
+                @Html.DisplayNameFor(model => model.foto)
+            </th>*@
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.codigo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.raza)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sexo)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.fechanac)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.tipomascota)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.cliente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.servicio)
+                </td>*@
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.foto)
+                </td>*@
+        <td>
+            @Html.ActionLink("Actualizar", "modificarMascota", new { id = item.codigo }, new { @class = "btn btn-info" })
+            @Html.ActionLink("Eliminar", "eliminarMascota", new { id = item.codigo }, new { @class = "btn btn-danger" })
+            @Html.ActionLink("Historial", "verHistorial", new { id = item.codigo }, new { @class = "btn btn-success" })
+        </td>
+        </tr>
+    }
+
+</table>
+
+<script>
+    if ("@ViewBag.Error" != "")
+            swal("@ViewBag.Error", "Para Continuar presione el Boton", "error");
+
+        if ("@ViewBag.Success" != "")
+            swal("@ViewBag.Success", "Para Continuar presione el Boton", "success");
+
+        if ("@ViewBag.Info" != "")
+            swal("@ViewBag.Info", "Para Continuar presione el Boton", "info");
+
+</script>

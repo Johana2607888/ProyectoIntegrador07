@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Proyecto_Integrador.Model.Servicios>
+
+@{
+    ViewBag.Title = "listadoServicios";
+    Layout = "~/Views/Shared/_LayoutPrincipal.cshtml";
+}
+
+@*<h2>listadoServicios</h2>*@
+
+<p>
+    @Html.ActionLink("Nuevo Servicio", "registrarServicio", null, new { @class = "btn btn-success" })
+</p>
+<table class="table" style="width: 98%;max-width: 100%;margin-bottom: 20px;background-color: white;margin-left: -1px;">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechaservicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.precio)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.foto)
+            </th>*@
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.codigo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fechaservicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.precio)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.foto)
+                </td>*@
+            <td>
+                @Html.ActionLink("Actualizar", "modificarServicio", new { id = item.codigo }, new { @class = "btn btn-info" })
+                @Html.ActionLink("Eliminar", "eliminarServicio", new { id = item.codigo }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<script>
+    if ("@ViewBag.Error" != "")
+            swal("@ViewBag.Error", "Para Continuar presione el Boton", "error");
+
+        if ("@ViewBag.Success" != "")
+            swal("@ViewBag.Success", "Para Continuar presione el Boton", "success");
+
+        if ("@ViewBag.Info" != "")
+            swal("@ViewBag.Info", "Para Continuar presione el Boton", "info");
+
+</script>

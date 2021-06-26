@@ -1,0 +1,17 @@
+﻿
+
+@model IEnumerable<Proyecto_Integrador.Model.Mascota>
+@foreach (var elemento in Model)
+{
+    <section class="bloque">
+        <img class="imgArt" src="@Url.Content(elemento.foto)" />
+        CODIGO: @elemento.codigo <br />
+        DESCRIPCION: @elemento.nombre <br />
+        RAZA: @elemento.raza<br />
+        TIPO: @elemento.tipomascota<br />
+
+        @*@Html.ActionLink("ADQUIRIR", "seleccionaProducto",new { id=elemento.codigo },
+                         new { @class="btn btn-success" })*@
+
+    </section>
+}

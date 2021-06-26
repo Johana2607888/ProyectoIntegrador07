@@ -1,0 +1,57 @@
+﻿
+<!DOCTYPE html>
+
+@{ 
+    int idRol = int.Parse(Session["idRol"].ToString());
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" />
+    <script type="text/javascript"
+            src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js">
+
+    </script>
+
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <ul>
+                <li>@Html.ActionLink("PRINCIPAL", "Principal", "Home")</li>
+                <li>@Html.ActionLink("NOSOTROS", "About", "Home")</li>
+                <li> @Html.ActionLink("CONTACTO", "Contact", "Home")</li>
+                @if (idRol == 2)
+                {
+                    <li> @Html.ActionLink("MIS MASCOTAS", "MascotasClientes", "Mascota")</li>
+                    <li> @Html.ActionLink("TIENDA", "carritoCompras", "Tienda")</li>
+                    <li> @Html.ActionLink("TRACKING - PEDIDO", "ListadoPedidos", "Pedido")</li>
+                }
+                <li style="margin-left:500px;color:white">@ViewBag.Message</li>
+                <li>@Html.ActionLink("CERRAR SESION", "Login", "Acceso")</li>
+
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <figure style="margin-bottom: 20px;">
+        <img id="banner" src="~/Imagenes/banner.jpg" height="300" />
+
+    </figure>
+
+    @RenderBody()
+    <footer>
+        <h6>Todos los derechos reservados</h6>
+    </footer>
+
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewBag.Title = "Principal";
+    Layout = "~/Views/Shared/_LayoutPrincipal.cshtml";
+    int idRol = int.Parse(Session["idRol"].ToString());
+}
+
+
+
+
+<section id="columna" style="border:none">
+    <table>
+        <tr>
+            <td>
+                <img id="logo" src="~/Imagenes/producto.png" />
+                @if (idRol == 1)
+                {
+                    @Html.ActionLink("PRODUCTOS", "listadoProductos", "Producto")
+                }
+                else
+                {
+                    @Html.ActionLink("MIS PEDIDOS", "ListadoPedidos", "Pedido")
+                }
+            </td>
+        </tr>
+    </table>
+</section>
+
+<section id="columna" style="border:none">
+    <table>
+        <tr>
+            <td>
+                <img id="logo" src="~/Imagenes/mascotas.png" />
+                @if (idRol == 1)
+                {
+                    @Html.ActionLink("MASCOTAS", "listadoMascotas", "Mascota")
+                }
+                else
+                {
+                    @Html.ActionLink("MIS MASCOTAS", "registrarMascota", "Mascota")
+                }
+            </td>
+
+        </tr>
+    </table>
+</section>
+
+<section id="columna" style="border:none">
+    <table>
+        <tr>
+            <td>
+                <img id="logo" src="~/Imagenes/servicios.png" />
+                @if (idRol == 1)
+                {
+                    @Html.ActionLink("SERVICIOS", "listadoServicios", "Servicio")
+                }
+                else
+                {
+                    @Html.ActionLink("TIENDA", "carritoCompras", "Tienda")
+                }
+            </td>
+        </tr>
+    </table>
+</section>
+
+@if (idRol == 1)
+{
+    <section id="columna" style="border:none">
+        <table>
+            <tr>
+                <td>
+                    <img id="logo" src="~/Imagenes/cliente.png" />
+                    @Html.ActionLink("CLIENTES", "ListadoCliente", "Cliente")
+                </td>
+            
+            </tr>
+        </table>
+    </section>
+
+
+
+    <section id="columna" style="border:none">
+        <table>
+            <tr>
+                <td>
+                    <img id="logo" src="~/Imagenes/atencionpedido2.png" />
+                    @Html.ActionLink("PEDIDOS", "ListadodePedidos", "Pedido")
+                </td>
+            </tr>
+        </table>
+    </section>
+    <section id="columna" style="border:none">
+        <table>
+            <tr>
+                <td>
+                    <img id="logo" src="~/Imagenes/proveedor.png" />
+                    @Html.ActionLink("PROVEEDORES", "listadoProveedores", "Proveedor")
+                </td>
+            </tr>
+        </table>
+    </section>
+}
