@@ -77,6 +77,7 @@ namespace Proyecto_Integrador.Controllers
 
         }
 
+        //listado de mascota total
         List<Mascota> listMascotasTotal()
         {
             cn.Open();
@@ -107,10 +108,7 @@ namespace Proyecto_Integrador.Controllers
             return View(listMascotasTotal());
         }
 
-
-
-
-
+        //mostrando mascotas por clientes
         public ActionResult MascotasClientes()
         {
             if (Session["mascotas"] == null)
@@ -120,6 +118,7 @@ namespace Proyecto_Integrador.Controllers
             return View(listMascotas());
         }
 
+        //eliminar mascota
         public ActionResult eliminarMascota(int id)
         {
             MascotaO objP = listMascotasO().Where(p => p.codigo == id).FirstOrDefault();
@@ -148,6 +147,7 @@ namespace Proyecto_Integrador.Controllers
             return RedirectToAction("listadoMascotas","Mascota");
         }
 
+        //listado de servicios
         List<Servicios> listServicios()
         {
             List<Servicios> aServicio = new List<Servicios>();
@@ -168,7 +168,7 @@ namespace Proyecto_Integrador.Controllers
             return aServicio;
         }
 
-
+        //listado de tipos de mascotas
         List<TipoMascota> listTipoMascota()
         {
             List<TipoMascota> aServicio = new List<TipoMascota>();
@@ -189,6 +189,7 @@ namespace Proyecto_Integrador.Controllers
             return aServicio;
         }
 
+        //registro de mascotas
         public ActionResult registrarMascota()
         {
             ViewBag.Message = "Bienvenido(a) " + Session["User"];
@@ -298,6 +299,7 @@ namespace Proyecto_Integrador.Controllers
 
         }
 
+        //modificar mascota
         public ActionResult modificarMascota(int id)
         {
             ViewBag.Message = "Bienvenido(a) " + Session["User"];
@@ -409,6 +411,7 @@ namespace Proyecto_Integrador.Controllers
             return View("~/Views/Mascota/modificarMascota.cshtml");
         }
 
+        //lista del historial de incidencias
         List<Historial> listHistorial(int id)
         {
             cn.Open();
@@ -438,6 +441,7 @@ namespace Proyecto_Integrador.Controllers
             return View(listHistorial(id));
         }
 
+        //registro de incidencias
         public ActionResult registrarIncidente(int id)
         {
             ViewBag.Message = "Bienvenido(a) " + Session["User"];

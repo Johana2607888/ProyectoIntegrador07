@@ -20,6 +20,7 @@ namespace Proyecto_Integrador.Controllers
             return View();
         }
 
+        //lista de pedidos
         List<Pedido> listPedidos()
         {
             int id = int.Parse(Session["idUser"].ToString());
