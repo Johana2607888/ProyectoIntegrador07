@@ -22,6 +22,7 @@ namespace Proyecto_Integrador.Controllers
             return View();
         }
 
+        //listado de productos
         List<Producto> ListProducto()
         {
             List<Producto> aProductos = new List<Producto>();
@@ -50,7 +51,7 @@ namespace Proyecto_Integrador.Controllers
             }
             return aProductos;
         }
-
+        //carrito de compras
         public ActionResult carritoCompras()
         {
 
@@ -66,13 +67,14 @@ namespace Proyecto_Integrador.Controllers
             }
             return View(ListProducto());
         }
-
+        //seleccionar producto
         public ActionResult seleccionaProducto(int id)
         {
             Producto objP = ListProducto().Where(p => p.codigo == id).FirstOrDefault();
             return View(objP);
         }
 
+        //agregar producto
         public ActionResult agregarProducto(int id, int cant = 0)
         {
             var miProducto = ListProducto().Where(p => p.codigo == id).FirstOrDefault();
@@ -93,6 +95,7 @@ namespace Proyecto_Integrador.Controllers
             return RedirectToAction("carritoCompras");
         }
 
+        //comprar
         public ActionResult comprar()
         {
             if (Session["carrito"] == null)
@@ -117,7 +120,7 @@ namespace Proyecto_Integrador.Controllers
             return RedirectToAction("comprar");
         }
 
-
+        //comprar producto
         public ActionResult comprarProducto()
         {
             int x = 0;

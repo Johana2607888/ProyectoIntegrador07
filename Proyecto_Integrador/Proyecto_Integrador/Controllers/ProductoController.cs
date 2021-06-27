@@ -69,13 +69,14 @@ namespace Proyecto_Integrador.Controllers
             cn.Close();
             return aProductos;
         }
-        
+        //listado de productos
         public ActionResult listadoProductos()
         {
             ViewBag.Message = "Bienvenido(a) " + Session["User"];
             return View(listProductos());
         }
 
+        //listado de proveedor
         List<Proveedor> listProveedor()
         {
             List<Proveedor> aProveedor = new List<Proveedor>();
@@ -96,6 +97,7 @@ namespace Proyecto_Integrador.Controllers
             return aProveedor;
         }
 
+        //listado de categoria
         List<Categoria> listCategoria()
         {
             List<Categoria> aCategoria = new List<Categoria>();
@@ -116,6 +118,7 @@ namespace Proyecto_Integrador.Controllers
             return aCategoria;
         }
 
+        //listado de marca
         List<Marca> listMarca()
         {
             List<Marca> aMarca = new List<Marca>();
@@ -136,6 +139,7 @@ namespace Proyecto_Integrador.Controllers
             return aMarca;
         }
 
+        //eliminar producto
         public ActionResult eliminarProducto(int id)
         {
             ProductoO objP = listProductosO().Where(p => p.codigo == id).FirstOrDefault();
@@ -163,7 +167,7 @@ namespace Proyecto_Integrador.Controllers
             return RedirectToAction("listadoProductos");
         }
 
-
+        //modificar producto
         public ActionResult modificarProducto(int id)
         {
             ViewBag.Message = "Bienvenido(a) " + Session["User"];
@@ -286,7 +290,7 @@ namespace Proyecto_Integrador.Controllers
             return View("~/Views/Producto/modificarProducto.cshtml");
         }
 
-
+        //registrar producto
         public ActionResult registrarProducto()
         {
             ViewBag.Message = "Bienvenido(a) " + Session["User"];
