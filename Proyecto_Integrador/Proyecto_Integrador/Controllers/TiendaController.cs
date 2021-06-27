@@ -12,15 +12,17 @@ namespace Proyecto_Integrador.Controllers
 {
     public class TiendaController : Controller
     {
-
+        //conexion
         SqlConnection cn = new SqlConnection(ConfigurationManager.
                                  ConnectionStrings["cn"].ConnectionString);
+
 
         // GET: Tienda
         public ActionResult Index()
         {
             return View();
         }
+
 
         //listado de productos
         List<Producto> ListProducto()
@@ -51,6 +53,7 @@ namespace Proyecto_Integrador.Controllers
             }
             return aProductos;
         }
+
         //carrito de compras
         public ActionResult carritoCompras()
         {
@@ -67,6 +70,7 @@ namespace Proyecto_Integrador.Controllers
             }
             return View(ListProducto());
         }
+
         //seleccionar producto
         public ActionResult seleccionaProducto(int id)
         {
